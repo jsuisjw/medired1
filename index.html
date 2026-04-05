@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MediRed — Continuidad médica en el primer nivel de atención</title>
+  <meta name="description" content="MediRed es un programa que conecta los consultorios de primer nivel de México con un sistema compartido de expediente clínico y referencia para mejorar la continuidad de atención de pacientes crónicos." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="header__inner">
+
+      <!-- Logo -->
+      <a href="#" class="logo" aria-label="MediRed inicio">
+        <svg class="logo__icon" width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="38" height="38" rx="10" fill="var(--color-primary)"/>
+          <path d="M19 8v22M8 19h22" stroke="white" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="19" cy="8"  r="3" fill="white"/>
+          <circle cx="19" cy="30" r="3" fill="white"/>
+          <circle cx="8"  cy="19" r="3" fill="white"/>
+          <circle cx="30" cy="19" r="3" fill="white"/>
+        </svg>
+        <span class="logo__text">Medi<strong>Red</strong></span>
+      </a>
+
+      <nav class="nav" aria-label="Navegación principal">
+        <a href="#problema">El problema</a>
+        <a href="#programa">El programa</a>
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#para-quien">¿Para quién?</a>
+        <a href="#equipo">Equipo</a>
+      </nav>
+
+      <div class="header__actions">
+        <a href="#contacto" class="btn btn--primary btn--sm">Únete al proyecto</a>
+        <button class="hamburger" id="hamburger" aria-label="Menú" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <nav class="mobile-nav" id="mobileNav" aria-hidden="true">
+      <a href="#problema"      onclick="closeMenu()">El problema</a>
+      <a href="#programa"      onclick="closeMenu()">El programa</a>
+      <a href="#como-funciona" onclick="closeMenu()">Cómo funciona</a>
+      <a href="#para-quien"   onclick="closeMenu()">¿Para quién?</a>
+      <a href="#equipo"       onclick="closeMenu()">Equipo</a>
+      <a href="#contacto" class="btn btn--primary" onclick="closeMenu()">Únete al proyecto</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ░░ HERO ░░ -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__bg" aria-hidden="true">
+        <div class="hero__grid"></div>
+        <div class="hero__glow glow--1"></div>
+        <div class="hero__glow glow--2"></div>
+      </div>
+
+      <div class="hero__content">
+        <div class="hero__tag reveal-fade">Programa de salud · México 2026</div>
+        <h1 id="hero-title" class="hero__title reveal-up">
+          Cada consulta debería<br>
+          <em>continuar donde la dejaste</em>
+        </h1>
+        <p class="hero__desc reveal-up delay-1">
+          En México, 82,000 consultorios de farmacia atienden 10 millones de consultas al mes — sin expediente, sin seguimiento, sin continuidad. MediRed cambia eso.
+        </p>
+        <div class="hero__actions reveal-up delay-2">
+          <a href="#programa" class="btn btn--primary btn--lg">Conoce el programa</a>
+          <a href="#como-funciona" class="btn btn--ghost btn--lg">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M10 8l4 4-4 4"/></svg>
+            Cómo funciona
+          </a>
+        </div>
+      </div>
+
+      <div class="hero__visual reveal-up delay-3" aria-hidden="true">
+        <div class="pill-stack">
+          <div class="pill pill--1">
+            <div class="pill__dot" style="background:#ef4444"></div>
+            <span><strong>Sin expediente</strong> en 9 de cada 10 consultorios privados</span>
+          </div>
+          <div class="pill pill--2">
+            <div class="pill__dot" style="background:#f59e0b"></div>
+            <span><strong>10M consultas/mes</strong> sin datos clínicos estructurados</span>
+          </div>
+          <div class="pill pill--3">
+            <div class="pill__dot" style="background:#3b82f6"></div>
+            <span><strong>30M hipertensos</strong> — la mayoría sin seguimiento continuo</span>
+          </div>
+          <div class="pill pill--4">
+            <div class="pill__dot" style="background:#10b981"></div>
+            <span><strong>MediRed</strong> conecta al médico, al paciente y al sistema</span>
+          </div>
+        </div>
+
+        <div class="hero__mockup">
+          <div class="mockup-bar">
+            <span class="mockup-dot" style="background:#ef4444"></span>
+            <span class="mockup-dot" style="background:#f59e0b"></span>
+            <span class="mockup-dot" style="background:#22c55e"></span>
+            <span class="mockup-url">medired.mx · Expediente del paciente</span>
+          </div>
+          <div class="mockup-content">
+            <div class="mockup-patient">
+              <div class="mockup-avatar">GR</div>
+              <div>
+                <div class="mockup-name">Guadalupe Ramírez, 56 años</div>
+                <div class="mockup-tags">
+                  <span class="mockup-tag" style="background:#fef2f2;color:#dc2626">DM2</span>
+                  <span class="mockup-tag" style="background:#eff6ff;color:#2563eb">HAS</span>
+                  <span class="mockup-tag" style="background:#f0fdf4;color:#16a34a">Controlada</span>
+                </div>
+              </div>
+            </div>
+            <div class="mockup-stats">
+              <div class="mockup-stat">
+                <div class="mockup-stat__label">Glucosa (último)</div>
+                <div class="mockup-stat__val good">98 mg/dL</div>
+              </div>
+              <div class="mockup-stat">
+                <div class="mockup-stat__label">Presión arterial</div>
+                <div class="mockup-stat__val warn">138/88</div>
+              </div>
+              <div class="mockup-stat">
+                <div class="mockup-stat__label">Próxima cita</div>
+                <div class="mockup-stat__val">12 abr 2026</div>
+              </div>
+            </div>
+            <div class="mockup-alert">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              Presión por encima de meta — ajustar tratamiento
+            </div>
+            <div class="mockup-timeline">
+              <div class="mockup-event">
+                <div class="mockup-event__dot" style="background:var(--color-primary)"></div>
+                <span>Consulta CAF Similares · 15 mar</span>
+              </div>
+              <div class="mockup-event">
+                <div class="mockup-event__dot" style="background:#6366f1"></div>
+                <span>Laboratorios · 2 mar</span>
+              </div>
+              <div class="mockup-event">
+                <div class="mockup-event__dot" style="background:#f59e0b"></div>
+                <span>Consulta IMSS · 10 feb</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ CIFRAS RÁPIDAS ░░ -->
+    <section class="numbers-bar" aria-label="Cifras clave del problema">
+      <div class="container">
+        <div class="numbers-bar__grid">
+          <div class="numbers-bar__item reveal-up">
+            <div class="numbers-bar__value">82,000</div>
+            <div class="numbers-bar__label">consultorios adyacentes a farmacias en México</div>
+            <div class="numbers-bar__source"><a href="https://www.publimetro.com.mx/nacional/2025/07/29/consultorios-de-farmacia-cuales-nuevos-servicios-ofrecen-y-la-diferencia-con-hospitales/" target="_blank" rel="noopener">DENUE / Publimetro 2025</a></div>
+          </div>
+          <div class="numbers-bar__divider" aria-hidden="true"></div>
+          <div class="numbers-bar__item reveal-up delay-1">
+            <div class="numbers-bar__value">10M</div>
+            <div class="numbers-bar__label">consultas al mes en CAFs — sin expediente digital</div>
+            <div class="numbers-bar__source"><a href="https://www.eleconomista.com.mx/empresas/consultorios-farmacias-seis-10-visitas-medicas-20251208-790306.html" target="_blank" rel="noopener">NielsenIQ / El Economista 2025</a></div>
+          </div>
+          <div class="numbers-bar__divider" aria-hidden="true"></div>
+          <div class="numbers-bar__item reveal-up delay-2">
+            <div class="numbers-bar__value">6 de 10</div>
+            <div class="numbers-bar__label">mexicanos prefieren el CAF al sistema público de salud</div>
+            <div class="numbers-bar__source"><a href="https://www.eleconomista.com.mx/empresas/consultorios-farmacias-seis-10-visitas-medicas-20251208-790306.html" target="_blank" rel="noopener">NielsenIQ / El Economista 2025</a></div>
+          </div>
+          <div class="numbers-bar__divider" aria-hidden="true"></div>
+          <div class="numbers-bar__item reveal-up delay-3">
+            <div class="numbers-bar__value">175</div>
+            <div class="numbers-bar__label">muertes tratables por cada 100,000 hab. — el doble que la OCDE</div>
+            <div class="numbers-bar__source"><a href="https://www.oecd.org/es/publications/panorama-de-la-salud-2025_5345f1bd-es/mexico_42bdb5b4-es.html" target="_blank" rel="noopener">OCDE Health at a Glance 2025</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ EL PROBLEMA ░░ -->
+    <section class="section" id="problema" aria-labelledby="problema-title">
+      <div class="container">
+        <div class="section__header">
+          <div class="section__tag">El problema</div>
+          <h2 id="problema-title" class="section__title">
+            El paciente crónico mexicano vive en un sistema roto
+          </h2>
+          <p class="section__desc">
+            Millones de mexicanos con diabetes o hipertensión se atienden donde pueden: hoy en un CAF, mañana en el IMSS, pasado en urgencias. Nadie tiene el historial completo. Nadie da seguimiento. El resultado es predecible.
+          </p>
+        </div>
+
+        <div class="problema-layout">
+
+          <!-- Diagrama del problema -->
+          <div class="problema-diagram reveal-up">
+            <div class="diag-title">Así vive hoy un paciente crónico en México</div>
+            <div class="diag-flow">
+              <div class="diag-node diag-node--patient">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                <span>Paciente con DM2 e HAS</span>
+              </div>
+
+              <div class="diag-arrows">
+                <div class="diag-arrow">
+                  <div class="diag-arrow__line"></div>
+                  <div class="diag-dest diag-dest--caf">
+                    <strong>CAF Similares</strong>
+                    <span>Sin historial previo</span>
+                  </div>
+                </div>
+                <div class="diag-arrow">
+                  <div class="diag-arrow__line"></div>
+                  <div class="diag-dest diag-dest--imss">
+                    <strong>IMSS / ISSSTE</strong>
+                    <span>No sabe que fue al CAF</span>
+                  </div>
+                </div>
+                <div class="diag-arrow">
+                  <div class="diag-arrow__line"></div>
+                  <div class="diag-dest diag-dest--urgencias">
+                    <strong>Urgencias</strong>
+                    <span>Emergencia hipertensiva</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="diag-result">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>
+                Ningún médico tiene el panorama completo. El paciente repite estudios, cambia tratamientos sin razón y termina en urgencias.
+              </div>
+            </div>
+          </div>
+
+          <!-- Cards del problema -->
+          <div class="problema-cards">
+            <div class="prob-card reveal-up">
+              <div class="prob-card__icon prob-card__icon--red">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              </div>
+              <div>
+                <h3>Sin expediente compartido</h3>
+                <p>Los 82,000 CAFs operan de forma aislada. El médico no sabe qué le recetó otro colega la semana pasada. El paciente tampoco recuerda.</p>
+              </div>
+            </div>
+
+            <div class="prob-card reveal-up delay-1">
+              <div class="prob-card__icon prob-card__icon--orange">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div>
+                <h3>Cero seguimiento entre consultas</h3>
+                <p>El paciente diabético llega cada 3 meses si no está descompensado — y nadie le avisa cuando sus valores se salen de control entre citas.</p>
+              </div>
+            </div>
+
+            <div class="prob-card reveal-up delay-2">
+              <div class="prob-card__icon prob-card__icon--blue">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+              </div>
+              <div>
+                <h3>Referencia sin información</h3>
+                <p>Cuando el médico del CAF necesita referir a un especialista, no tiene forma de enviar el historial. El especialista parte de cero.</p>
+              </div>
+            </div>
+
+            <div class="prob-card reveal-up delay-3">
+              <div class="prob-card__icon prob-card__icon--purple">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              </div>
+              <div>
+                <h3>Sobreprescripción farmacológica</h3>
+                <p>Sin historial, el médico receta lo básico. El paciente acumula medicamentos de distintos consultorios sin nadie que revise interacciones.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Voz del paciente -->
+        <div class="voz-paciente reveal-up">
+          <div class="voz-paciente__comillas" aria-hidden="true">"</div>
+          <blockquote>
+            <p>Fui al doctor de la farmacia, me dio pastillas. Luego fui al IMSS y me cambiaron el tratamiento. Ninguno sabía lo que el otro me había dado. Terminé en urgencias con la presión por las nubes.</p>
+            <footer>
+              — Situación frecuente en consultorios de primer nivel en México,<br>
+              <cite>documentada en estudios de CAFs en el Estado de México (<a href="https://www.scielo.org.mx/pdf/hs/v24n2/2007-7459-hs-24-02-502.pdf" target="_blank" rel="noopener">Health Services 2025</a>)</cite>
+            </footer>
+          </blockquote>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ░░ EL PROGRAMA ░░ -->
+    <section class="section section--alt" id="programa" aria-labelledby="programa-title">
+      <div class="container">
+        <div class="section__header">
+          <div class="section__tag">El programa</div>
+          <h2 id="programa-title" class="section__title">
+            MediRed: el hilo conductor que le falta al primer nivel
+          </h2>
+          <p class="section__desc">
+            Un sistema digital de expediente clínico compartido y protocolo de referencia diseñado específicamente para los consultorios de primer nivel en México: los CAFs, las clínicas privadas y las unidades de medicina familiar.
+          </p>
+        </div>
+
+        <div class="programa-pillars">
+
+          <div class="pillar reveal-up">
+            <div class="pillar__number">01</div>
+            <div class="pillar__icon" style="color: var(--color-primary)">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M9 13h6M9 17h4"/></svg>
+            </div>
+            <h3>Expediente clínico compartido</h3>
+            <p>Una ficha digital del paciente accesible por cualquier médico registrado en MediRed. Historial de consultas, medicamentos, laboratorios y alergias en un solo lugar, actualizado en tiempo real.</p>
+          </div>
+
+          <div class="pillar reveal-up delay-1">
+            <div class="pillar__number">02</div>
+            <div class="pillar__icon" style="color: #6366f1">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.29 6.29l.94-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <h3>Protocolo de referencia inteligente</h3>
+            <p>Cuando el médico del CAF detecta que el paciente necesita un especialista o el IMSS, genera una referencia con el historial completo adjunto. Sin papeles, sin duplicar estudios, sin comenzar desde cero.</p>
+          </div>
+
+          <div class="pillar reveal-up delay-2">
+            <div class="pillar__number">03</div>
+            <div class="pillar__icon" style="color: #f59e0b">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+            </div>
+            <h3>Monitoreo de pacientes crónicos</h3>
+            <p>Panel de seguimiento para el médico: identifica qué pacientes no han regresado a control, cuáles tienen valores fuera de rango y quiénes necesitan una llamada de recordatorio. El olvido ya no es una excusa.</p>
+          </div>
+
+          <div class="pillar reveal-up delay-3">
+            <div class="pillar__number">04</div>
+            <div class="pillar__icon" style="color: #10b981">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18" stroke-width="3"/><line x1="9" y1="7" x2="15" y2="7"/><line x1="9" y1="11" x2="13" y2="11"/></svg>
+            </div>
+            <h3>App para el paciente</h3>
+            <p>El paciente descarga su expediente, ve sus próximas citas, recibe recordatorios de medicación y puede compartir su historia clínica con cualquier médico que le pida acceso — él tiene el control.</p>
+          </div>
+
+        </div>
+
+        <!-- Principios del programa -->
+        <div class="principios reveal-up">
+          <h3 class="principios__title">Lo que MediRed no es</h3>
+          <div class="principios__grid">
+            <div class="principio principio--no">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              <span>No reemplaza al médico ni al sistema público</span>
+            </div>
+            <div class="principio principio--no">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              <span>No comparte datos sin consentimiento del paciente</span>
+            </div>
+            <div class="principio principio--no">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              <span>No requiere internet de alta velocidad</span>
+            </div>
+            <div class="principio principio--si">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Funciona en el teléfono del médico desde el consultorio</span>
+            </div>
+            <div class="principio principio--si">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Compatible con el expediente electrónico del IMSS</span>
+            </div>
+            <div class="principio principio--si">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Gratuito para médicos en zonas de alta marginación</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ░░ CÓMO FUNCIONA ░░ -->
+    <section class="section" id="como-funciona" aria-labelledby="cf-title">
+      <div class="container">
+        <div class="section__header">
+          <div class="section__tag">Cómo funciona</div>
+          <h2 id="cf-title" class="section__title">Tres actores, un sistema</h2>
+          <p class="section__desc">MediRed no exige cambiar la forma de trabajar del médico. Se integra a su flujo actual en menos de 2 minutos por consulta.</p>
+        </div>
+
+        <div class="flujo-grid">
+
+          <!-- Médico -->
+          <div class="flujo-actor reveal-up">
+            <div class="flujo-actor__header" style="background: var(--gradient-primary)">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.6"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <h3>El médico del CAF</h3>
+            </div>
+            <div class="flujo-actor__steps">
+              <div class="flujo-step">
+                <div class="flujo-step__num">1</div>
+                <div>
+                  <strong>Busca al paciente</strong>
+                  <p>Por CURP o número de teléfono. Si es primera vez, lo registra en 30 segundos.</p>
+                </div>
+              </div>
+              <div class="flujo-step">
+                <div class="flujo-step__num">2</div>
+                <div>
+                  <strong>Consulta el historial</strong>
+                  <p>Ve todas las consultas previas, medicamentos activos y alertas clínicas antes de explorar.</p>
+                </div>
+              </div>
+              <div class="flujo-step">
+                <div class="flujo-step__num">3</div>
+                <div>
+                  <strong>Registra la consulta</strong>
+                  <p>Anota diagnóstico, tratamiento y próxima cita. Queda en el expediente compartido automáticamente.</p>
+                </div>
+              </div>
+              <div class="flujo-step">
+                <div class="flujo-step__num">4</div>
+                <div>
+                  <strong>Refiere si es necesario</strong>
+                  <p>Genera una referencia digital con el expediente completo para el especialista o el IMSS.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Paciente -->
+          <div class="flujo-actor reveal-up delay-1">
+            <div class="flujo-actor__header" style="background: linear-gradient(135deg, #6366f1, #8b5cf6)">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.6"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18" stroke-width="3"/></svg>
+              <h3>El paciente</h3>
+            </div>
+            <div class="flujo-actor__steps">
+              <div class="flujo-step">
+                <div class="flujo-step__num" style="background:#6366f1">1</div>
+                <div>
+                  <strong>Da su consentimiento</strong>
+                  <p>Una sola vez, autoriza que los médicos registrados en MediRed puedan ver su expediente.</p>
+                </div>
+              </div>
+              <div class="flujo-step">
+                <div class="flujo-step__num" style="background:#6366f1">2</div>
+                <div>
+                  <strong>Descarga su app</strong>
+                  <p>Accede a su historial completo, recibe recordatorios de medicación y de próximas citas.</p>
+                </div>
+              </div>
+              <div class="flujo-step">
+                <div class="flujo-step__num" style="background:#6366f1">3</div>
+                <div>
+                  <strong>Comparte su código QR</strong>
+                  <p>En cualquier consultorio, presenta su código QR. El médico escanea y accede al expediente en segundos.</p>
+                </div>
+              </div>
+              <div class="flujo-step">
+                <div class="flujo-step__num" style="background:#6366f1">4</div>
+                <div>
+                  <strong>Recibe alertas de seguimiento</strong>
+                  <p>Si sus valores están fuera de meta, el sistema le envía un recordatorio para ir al médico.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sistema de salud -->
+          <div class="flujo-actor reveal-up delay-2">
+            <div class="flujo-actor__header" style="background: linear-gradient(135deg, #0d9488, #059669)">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.6"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+              <h3>El sistema de salud</h3>
+            </div>
+            <div class="flujo-actor__steps">
+              <div class="flujo-step">
+                <div class="flujo-step__num" style="background:#0d9488">1</div>
+                <div>
+                  <strong>Recibe referencias completas</strong>
+                  <p>El médico del IMSS o el especialista privado recibe la referencia con todo el historial previo del paciente.</p>
+                </div>
+              </div>
+              <div class="flujo-step">
+                <div class="flujo-step__num" style="background:#0d9488">2</div>
+                <div>
+                  <strong>Retroalimenta al CAF</strong>
+                  <p>Al dar de alta al paciente, el resultado de la consulta vuelve al expediente y el médico del CAF puede verlo.</p>
+                </div>
+              </div>
+              <div class="flujo-step">
+                <div class="flujo-step__num" style="background:#0d9488">3</div>
+                <div>
+                  <strong>Genera datos epidemiológicos</strong>
+                  <p>Con el tiempo, MediRed produce información anónima sobre enfermedades prevalentes por zona geográfica.</p>
+                </div>
+              </div>
+              <div class="flujo-step">
+                <div class="flujo-step__num" style="background:#0d9488">4</div>
+                <div>
+                  <strong>Mejora la política pública</strong>
+                  <p>Los datos agregan valor a los tomadores de decisiones de la SSA, IMSS e ISSSTE para planear recursos.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ PARA QUIÉN ░░ -->
+    <section class="section section--alt" id="para-quien" aria-labelledby="pq-title">
+      <div class="container">
+        <div class="section__header">
+          <div class="section__tag">¿Para quién?</div>
+          <h2 id="pq-title" class="section__title">MediRed está hecho para el México real</h2>
+          <p class="section__desc">No para el hospital privado de zona Lomas ni para el tercer nivel de atención. Para los lugares donde el mexicano promedio se atiende de verdad.</p>
+        </div>
+
+        <div class="audiencia-grid">
+          <div class="audiencia-card reveal-up">
+            <div class="audiencia-card__icon" style="background: #fef2f2; color: #dc2626">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <h3>Médicos de consultorios en farmacia</h3>
+            <p>El médico del Dr. Simi, Farmacias Similares, Guadalajara, Benavides o cualquier consultorio privado que hoy opera solo, sin herramientas ni red de apoyo.</p>
+            <ul class="audiencia-list">
+              <li>Consulta más segura con historial completo</li>
+              <li>Referencia digital sin papeleo</li>
+              <li>Panel de seguimiento de sus pacientes crónicos</li>
+            </ul>
+          </div>
+
+          <div class="audiencia-card reveal-up delay-1">
+            <div class="audiencia-card__icon" style="background: #eff6ff; color: #2563eb">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3>Pacientes con enfermedades crónicas</h3>
+            <p>El mexicano con diabetes, hipertensión u obesidad que se atiende donde puede, que no recuerda sus medicamentos y que no tiene quién le diga cuándo regresar a control.</p>
+            <ul class="audiencia-list">
+              <li>Expediente propio en el celular</li>
+              <li>Recordatorios de medicación y citas</li>
+              <li>Un código QR que reemplaza los documentos en papel</li>
+            </ul>
+          </div>
+
+          <div class="audiencia-card reveal-up delay-2">
+            <div class="audiencia-card__icon" style="background: #f0fdf4; color: #16a34a">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <h3>Médicos de unidades del IMSS e ISSSTE</h3>
+            <p>El médico de la Unidad de Medicina Familiar que recibe pacientes referidos sin información, que duplica estudios y que no sabe qué tratamiento traía el paciente del privado.</p>
+            <ul class="audiencia-list">
+              <li>Referencias completas desde el primer nivel</li>
+              <li>Coordinación real con el sector privado</li>
+              <li>Reducción de estudios duplicados</li>
+            </ul>
+          </div>
+
+          <div class="audiencia-card reveal-up delay-3">
+            <div class="audiencia-card__icon" style="background: #faf5ff; color: #7c3aed">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <h3>Autoridades de salud y tomadores de decisión</h3>
+            <p>La SSA, los sistemas estatales de salud y los gestores del IMSS-Bienestar que necesitan datos reales del primer nivel para planear campañas, recursos y políticas de prevención.</p>
+            <ul class="audiencia-list">
+              <li>Datos epidemiológicos anonimizados por zona</li>
+              <li>Alertas tempranas de brotes o patrones inusuales</li>
+              <li>Puente real entre sector privado y público</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ VISIÓN A 10 AÑOS ░░ -->
+    <section class="section vision-section" id="vision" aria-labelledby="vision-title">
+      <div class="container">
+        <div class="section__header">
+          <div class="section__tag section__tag--light">Visión a 10 años</div>
+          <h2 id="vision-title" class="section__title section__title--light">
+            El primer nivel que México merece
+          </h2>
+          <p class="section__desc section__desc--light">
+            Hoy somos un programa. En diez años, el estándar del primer nivel de atención en México.
+          </p>
+        </div>
+
+        <div class="vision-timeline">
+          <div class="timeline-item reveal-up">
+            <div class="timeline-dot timeline-dot--active"></div>
+            <div class="timeline-content">
+              <div class="timeline-year">2026 — Inicio</div>
+              <h3>Desarrollo del prototipo en la CDMX</h3>
+              <p>Diseño y construcción del sistema base: expediente digital, flujo de registro y protocolo de referencia. Acercamiento con los primeros médicos de CAF de la CDMX para validar la herramienta con usuarios reales antes de cualquier lanzamiento formal.</p>
+            </div>
+          </div>
+          <div class="timeline-item reveal-up delay-1">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-year">2027 — Prueba piloto</div>
+              <h3>Primeros consultorios en operación real</h3>
+              <p>Implementación con un grupo pequeño de consultorios voluntarios en la CDMX. El objetivo es detectar fallas, ajustar el flujo clínico y entender cómo usa el sistema un médico en una consulta.</p>
+            </div>
+          </div>
+          <div class="timeline-item reveal-up delay-2">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-year">2028–2029 — Consolidación</div>
+              <h3>Ajustes, alianzas y primera expansión</h3>
+              <p>Con el piloto validado, búsqueda de alianzas institucionales con universidades, organizaciones de salud pública o instancias de gobierno local. Expansión gradual a otras alcaldías o ciudades según los recursos disponibles.</p>
+            </div>
+          </div>
+          <div class="timeline-item reveal-up delay-3">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-year">2030–2036 — Crecimiento sostenido</div>
+              <h3>Una red que crece con el sistema de salud</h3>
+              <p>Si el modelo funciona y encuentra el respaldo correcto, la meta a largo plazo es que MediRed pueda operar en otras ciudades del país. Sin promesas de cifras, con la convicción de que la continuidad médica en el primer nivel sí es posible en México.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ EQUIPO ░░ -->
+    <section class="section" id="equipo" aria-labelledby="equipo-title">
+      <div class="container">
+        <div class="section__header">
+          <div class="section__tag">Quiénes somos</div>
+          <h2 id="equipo-title" class="section__title">El equipo detrás de MediRed</h2>
+          <p class="section__desc">Médicos, ingenieros y especialistas en salud pública que conocen el problema desde adentro.</p>
+        </div>
+
+        <!-- Fundador -->  
+        <div class="equipo-fundador reveal-up">
+          <div class="equipo-card equipo-card--director">
+            <div class="equipo-card__avatar equipo-card__avatar--director">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <div class="equipo-card__badge">Fundador del Proyecto</div>
+            <h3>Oscar Mendoza</h3>
+            <p class="equipo-card__role">Estudiante de Medicina · UNAM, Facultad de Medicina</p>
+            <p class="equipo-card__desc">Estudiante de la Facultad de Medicina de la UNAM. Impulsor del proyecto MediRed como respuesta a las brechas reales que enfrenta el primer nivel de atención en México.</p>
+          </div>
+
+          <!-- Equipo necesario -->
+          <div class="equipo-buscamos">
+            <div class="buscamos__title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              Perfiles que buscamos para el equipo
+            </div>
+            <div class="buscamos__grid">
+              <div class="buscamos__item">
+                <div class="buscamos__icon" style="color: var(--color-primary)">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </div>
+                <div>
+                  <strong>Médico general o de familia</strong>
+                  <span>Con experiencia en primer nivel o CAFs</span>
+                </div>
+              </div>
+              <div class="buscamos__item">
+                <div class="buscamos__icon" style="color: #6366f1">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                </div>
+                <div>
+                  <strong>Ingeniero de software</strong>
+                  <span>Desarrollo de apps y sistemas de salud</span>
+                </div>
+              </div>
+              <div class="buscamos__item">
+                <div class="buscamos__icon" style="color: #f59e0b">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3zM21 9H3M21 15H3M12 3v18"/></svg>
+                </div>
+                <div>
+                  <strong>Especialista en salud pública</strong>
+                  <span>Epidemiología o gestión de sistemas de salud</span>
+                </div>
+              </div>
+              <div class="buscamos__item">
+                <div class="buscamos__icon" style="color: #10b981">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <div>
+                  <strong>Asesor legal y regulatorio</strong>
+                  <span>LFPDPPP, NOM-004, regulación sanitaria</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Alianzas potenciales -->
+        <div class="alianzas reveal-up">
+          <p class="alianzas__label">Instituciones con las que queremos colaborar</p>
+          <div class="alianzas__grid">
+            <div class="alianza-tag">UNAM · Fac. de Medicina</div>
+            <div class="alianza-tag">IMSS-Bienestar</div>
+            <div class="alianza-tag">Secretaría de Salud</div>
+            <div class="alianza-tag">INSP</div>
+            <div class="alianza-tag">Consejo de Salubridad General</div>
+            <div class="alianza-tag">Cadenas farmacéuticas (CAFs)</div>
+            <div class="alianza-tag">OPS / PAHO</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ░░ CONTACTO ░░ -->
+    <section class="section section--alt" id="contacto" aria-labelledby="contacto-title">
+      <div class="container container--narrow">
+        <div class="section__header">
+          <div class="section__tag">Contacto</div>
+          <h2 id="contacto-title" class="section__title">¿Quieres ser parte de MediRed?</h2>
+          <p class="section__desc">Este proyecto apenas comienza. Si eres médico, ingeniero, investigador, gestor de salud o simplemente crees en la idea — escríbenos. Necesitamos manos.</p>
+        </div>
+
+        <form class="form" id="contactForm" novalidate>
+          <div class="form__row">
+            <div class="form__group">
+              <label for="nombre">Nombre completo <span aria-hidden="true">*</span></label>
+              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required autocomplete="name">
+            </div>
+            <div class="form__group">
+              <label for="email">Correo electrónico <span aria-hidden="true">*</span></label>
+              <input type="email" id="email" name="email" placeholder="tu@correo.com" required autocomplete="email">
+            </div>
+          </div>
+          <div class="form__group">
+            <label for="perfil">¿Cómo puedes contribuir? <span aria-hidden="true">*</span></label>
+            <select id="perfil" name="perfil" required>
+              <option value="" disabled selected>Selecciona tu perfil</option>
+              <option value="medico">Médico / clínico (CAF, IMSS, privado)</option>
+              <option value="ingeniero">Ingeniero / desarrollador de software</option>
+              <option value="salud_publica">Especialista en salud pública / epidemiología</option>
+              <option value="ong">Organización civil / ONG</option>
+              <option value="academia">Investigador / académico</option>
+              <option value="gobierno">Funcionario de gobierno o institución pública</option>
+              <option value="paciente">Paciente o representante comunitario</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+          <div class="form__group">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="5" placeholder="Cuéntanos sobre ti, tu experiencia y cómo te gustaría colaborar con MediRed..."></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full btn--lg">Enviar mensaje</button>
+          <p class="form__note">Tu información es confidencial y jamás será compartida con terceros.</p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="#" class="logo logo--footer" aria-label="MediRed inicio">
+            <svg class="logo__icon" width="28" height="28" viewBox="0 0 38 38" fill="none">
+              <rect width="38" height="38" rx="10" fill="var(--color-primary)"/>
+              <path d="M19 8v22M8 19h22" stroke="white" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="19" cy="8"  r="3" fill="white"/>
+              <circle cx="19" cy="30" r="3" fill="white"/>
+              <circle cx="8"  cy="19" r="3" fill="white"/>
+              <circle cx="30" cy="19" r="3" fill="white"/>
+            </svg>
+            <span>Medi<strong>Red</strong></span>
+          </a>
+          <p>Continuidad médica en el primer nivel de atención. Un programa para conectar los consultorios de México con el paciente que los necesita.</p>
+        </div>
+        <div class="footer__nav">
+          <div class="footer__col">
+            <h4>El programa</h4>
+            <nav>
+              <a href="#problema">El problema</a>
+              <a href="#programa">Qué es MediRed</a>
+              <a href="#como-funciona">Cómo funciona</a>
+              <a href="#vision">Visión a 10 años</a>
+            </nav>
+          </div>
+          <div class="footer__col">
+            <h4>Fuentes</h4>
+            <nav>
+              <a href="https://www.oecd.org/es/publications/panorama-de-la-salud-2025_5345f1bd-es/mexico_42bdb5b4-es.html" target="_blank" rel="noopener">OCDE Health at a Glance 2025</a>
+              <a href="https://www.eleconomista.com.mx/empresas/consultorios-farmacias-seis-10-visitas-medicas-20251208-790306.html" target="_blank" rel="noopener">NielsenIQ / El Economista 2025</a>
+              <a href="https://www.scielo.org.mx/pdf/hs/v24n2/2007-7459-hs-24-02-502.pdf" target="_blank" rel="noopener">Health Services 2025 (Scielo)</a>
+              <a href="https://pubmed.ncbi.nlm.nih.gov/41698262/" target="_blank" rel="noopener">Salud Pública de México 2026</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 MediRed · Programa de continuidad médica en el primer nivel de atención en México</p>
+        <p>Fundador: Oscar Mendoza · Facultad de Medicina, UNAM</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
